@@ -1,0 +1,603 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* GLOBAL FONT SETTINGS */
+p,
+button,
+li,
+h1,
+h2,
+h3,
+h4,
+span,
+b {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+button,
+input {
+    outline: none;
+}
+
+/* ROOT VARIABLES (RESPONSIVE) */
+:root {
+    /* BORDER FIX — to‘g‘rilandi */
+    --border-1: 1px solid black;
+
+    /* COLOR VARIABLES */
+    --primary-color: #2563eb;
+    --white: #ffffff;
+    --black: #000000;
+
+    /* RESPONSIVE FONT-SIZES */
+    --font-size-16: clamp(14px, 1.2vw, 16px);
+    --font-size-18: clamp(15px, 1.4vw, 18px);
+    --font-size-20: clamp(16px, 1.6vw, 20px);
+    --font-size-25: clamp(18px, 2vw, 25px);
+    --font-size-30: clamp(22px, 2.5vw, 30px);
+    --font-size-35: clamp(26px, 3vw, 35px);
+    --font-size-40: clamp(30px, 3.5vw, 40px);
+    --font-size-45: clamp(34px, 4vw, 45px);
+    --font-size-50: clamp(38px, 4.5vw, 50px);
+    --font-size-55: clamp(42px, 5vw, 55px);
+    --font-size-60: clamp(46px, 6vw, 60px);
+
+    /* FONT WEIGHTS (tartiblangan / to‘g‘ri) */
+    --font-weight-100: 100;
+    --font-weight-200: 200;
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+    --font-weight-800: 800;
+    --font-weight-900: 900;
+
+    /* RESPONSIVE GAP */
+    --gap-5: clamp(3px, 0.5vw, 5px);
+    --gap-10: clamp(6px, 1vw, 10px);
+    --gap-20: clamp(12px, 2vw, 20px);
+    --gap-30: clamp(18px, 3vw, 30px);
+    --gap-40: clamp(24px, 4vw, 40px);
+    --gap-50: clamp(30px, 5vw, 50px);
+}
+
+/* CURSOR POINTER */
+button,
+i,
+svg,
+li {
+    cursor: pointer;
+}
+
+/* LINK STYLES RESET */
+a {
+    text-decoration: none;
+
+}
+
+/* MAX WIDTH */
+.max-width {
+    max-width: 1300px;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+/* DISPLAY HELPERS */
+.display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+/* ? GAP */
+.gap-5 {
+    gap: var(--gap-5);
+}
+
+
+.gap-10 {
+    gap: var(--gap-10);
+}
+
+
+.gap-20 {
+    gap: var(--gap-20);
+}
+
+
+
+.gap-30 {
+    gap: var(--gap-30);
+}
+
+
+
+.gap-40 {
+    gap: var(--gap-40);
+}
+
+
+
+.gap-50 {
+    gap: var(--gap-50);
+}
+
+
+/* ? font size */
+
+.font-size-16 {
+    font-size: var(--font-size-16);
+}
+
+
+
+.font-size-18 {
+    font-size: var(--font-size-18);
+}
+
+
+.font-size-20 {
+    font-size: var(--font-size-20);
+}
+
+
+.font-size-25 {
+    font-size: var(--font-size-25);
+}
+
+
+.font-size-30 {
+    font-size: var(--font-size-30);
+}
+
+
+.font-size-35 {
+    font-size: var(--font-size-35);
+}
+
+
+.font-size-40 {
+    font-size: var(--font-size-40);
+}
+
+
+.font-size-45 {
+    font-size: var(--font-size-45);
+}
+
+
+.font-size-50 {
+    font-size: var(--font-size-50);
+}
+
+
+.font-size-55 {
+    font-size: var(--font-size-55);
+}
+
+
+.font-size-60 {
+    font-size: var(--font-size-60);
+}
+
+/* ? font weight */
+
+.font-weight-400 {
+    font-weight: var(--font-weight-400);
+}
+
+
+
+.font-weight-500 {
+    font-weight: var(--font-weight-500);
+}
+
+
+.font-weight-600 {
+    font-weight: var(--font-weight-600);
+}
+
+
+.font-weight-700 {
+    font-weight: var(--font-weight-700);
+}
+
+
+
+
+.font-weight-800 {
+    font-weight: var(--font-weight-800);
+}
+
+
+
+.font-weight-900 {
+    font-weight: var(--font-weight-900);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 150px;
+}
+/* 
+.display2{
+    display: flex;
+    justify-content: space-between
+}
+ */
+
+.max-wid {
+    max-width: 1170px;
+    margin: auto;
+}
+
+
+/* ============== library end================ */
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    color: black;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(90, 88, 88, 0.747);
+    padding: 10px;
+    z-index: 999;
+
+    & img {
+        max-width: 100px;
+        max-height: 100px;
+
+    }
+
+    & i {
+        font-size: 25px;
+    }
+
+    & .bx-question-mark {
+        border: 1px solid black;
+        padding: 2px;
+        border-radius: 50%;
+    }
+
+    & button {
+        border: 1px solid black;
+        background-color: transparent;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
+
+    & .header-rasim {
+        display: none;
+        width: 100px;
+        height: 100px;
+        border-radius: 20px;
+        background-color: rgb(255, 246, 246);
+        padding: 15px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+    }
+
+    & .rasim {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(156, 153, 153);
+        border-radius: 50%;
+        padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    & .rasim:hover .header-rasim {
+        display: block;
+        transition: all 0.4s ease;
+
+
+    }
+
+    .text {
+        font-size: 10;
+    }
+
+}
+
+/* ? saidbar */
+.saidbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 150px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(90, 88, 88, 0.747);
+    z-index: 777;
+
+    & .iconlar {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 40px;
+
+    }
+
+    & h4 {
+        font-size: 15px;
+    }
+
+
+
+
+    .tim:hover {
+
+        border-left: 4px solid rgb(247, 184, 68);
+        transition: all 0.3s ease;
+
+    }
+
+    .itim:hover {
+        color: rgb(250, 204, 119);
+        transition: all 0.3s ease;
+
+    }
+
+
+}
+
+
+/* ? home */
+
+.home {
+    margin-top: 100px;
+    position: relative;
+    z-index: 888;
+
+}
+
+.kalendar {
+    position: fixed;
+    top: 15%;
+    left: 13%;
+    width: 86%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(90, 88, 88, 0.747);
+    padding: 10px;
+
+
+    .red-text {
+        color: red;
+    }
+
+    & button {
+        border: none;
+        background-attachment: aqua;
+        border-radius: 20px;
+        padding: 8px 15px;
+    }
+
+    .olov {
+        background-color: orange;
+
+    }
+
+
+
+
+}
+
+.matin{
+    margin-left: 100px;
+    margin-top: 170px;
+}
+
+
+/* ? jadval */
+.attendance {
+    margin-top: 5%;
+    margin-left: 46%;
+    width: 700px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: sans-serif;
+
+}
+
+.attendance th,
+.attendance td {
+    border: 1px solid #eee;
+    padding: 6px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.name {
+    text-align: left;
+    width: 180px;
+    font-weight: 500;
+}
+
+.att {
+    width: 22px;
+    height: 22px;
+    border: none;
+    border-radius: 6px;
+}
+
+.ok {
+    background: #22b8a0;
+    cursor: pointer;
+
+}
+
+
+.bor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(15, 236, 170);
+    display: none;
+    padding: 3px;
+
+}
+
+.bor2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(236, 15, 15);
+    display: none;
+    padding: 3px;
+
+}
+
+
+
+
+.jadval:hover .bor {
+    display: block;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+.jadval:hover .bor2 {
+    display: block;
+    transition: all 0.4s ease;
+
+}
+
+
+.no {
+    background: #e74c3c;
+}
+
+
+/* ? Frontend */
+
+
+
+.width {
+    width: 300px;
+}
+
+.frontent {
+    position: absolute;
+    top: 15%;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(90, 88, 88, 0.747);
+    padding: 10px;
+    margin-left: 100px;
+  & span{
+    color: hwb(0 0% 100%);
+  }
+/* har bir qator */
+.isimlar {
+  position: relative;              /* MUHIM */
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* popup */
+.yuqlama {
+  position: absolute;              /* oqimdan chiqaradi */
+  top: 100%;
+  right: 0;
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(90, 88, 88, 0.747);
+  background: #fff;
+  z-index: 999;
+}
+
+
+.isimlar:hover .yuqlama {
+  display: flex;                   /* block emas — flex edi */
+}
+
+   
+}
+
+
+.footer{
+    /* width: 100%;/ */
+    height: 80px;
+    position: absolute;
+    top: 80%;
+    bottom: 0;
+    left: 12% ;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(90, 88, 88, 0.747);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/* ==========Media============= */
+
+@media (max-width: 1000) {
+    .max-width {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 900) {
+    img {
+        max-width: 100%;
+
+    }
+}
