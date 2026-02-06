@@ -356,7 +356,7 @@ header {
         text-align: center;
         font-size: 40px;
         text-decoration: none;
-        
+
 
     }
 
@@ -611,147 +611,150 @@ header {
 .menu-icon {
     display: none;
     /* desktopda ko‘rinmaydi */
+
 }
 
-/* ===== Mobile / Tablet ===== */
+/* ================= RESPONSIVE ================= */
+
+/* ===== Tablet (max 1024px) ===== */
+@media (max-width: 1024px) {
+    /* Sidebar — faqat icon */
+    .saidbar {
+        width: 70px;
+        z-index: 800; /* header ortida qolmasligi uchun */
+    }
+
+    .saidbar h4 {
+        display: none;
+    }
+
+    .saidbar .iconlar {
+        font-size: 28px;
+    }
+
+    /* Content offset */
+    .kalendar {
+        position: relative;
+        top: 0;
+        left: 80px; /* sidebar width + gap */
+        width: calc(100% - 90px);
+        z-index: 1;
+    }
+
+    .matin {
+        margin-left: 90px;
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .frontent {
+        margin-left: 90px;
+        width: 320px;
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .attendance {
+        margin-left: 90px;
+        width: calc(100% - 110px);
+        margin-top: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer {
+        left: 80px;
+        width: calc(100% - 90px);
+        margin-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* ===== Mobile / Small tablet (max 768px) ===== */
 @media (max-width: 768px) {
-    .box {
-        flex-direction: row;
-        /* logo + menu icon bir qatorda */
+    header .box {
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: relative;
         gap: 10px;
+        position: relative;
+        flex-wrap: wrap;
     }
 
-    /* Logo o‘rtaga */
-    .box img {
+    header img {
+        max-width: 80px;
         margin: 0 auto;
-    }
-
-    /* Iconlar default yashirin */
-    .header-icons {
-        display: none;
-        position: absolute;
-        top: 100%;
-        /* header ostida chiqadi */
-        right: 0;
-        background: white;
-        flex-direction: column;
-        width: 200px;
-        padding: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        z-index: 999;
     }
 
     .menu-icon {
         display: block;
-        font-size: 28px;
-        cursor: pointer;
+        font-size: 26px;
         position: absolute;
         right: 10px;
+        top: 10px;
+        cursor: pointer;
     }
-}
 
-
-@media (max-width:768px) {
-
-    .saidbar,
-    .kalendar {
-        position: static;
+    .header-icons {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        background: #fff;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        z-index: 999;
     }
-}
 
-@media (max-width: 1024px) {
-
+    /* Sidebar ingichka */
     .saidbar {
-        width: 120px;
+        width: 60px;
+        height: auto;
+        z-index: 800;
     }
 
-    .attendance {
+    /* Content columnga tushadi va gap beriladi */
+    .kalendar, .matin, .frontent, .attendance, .footer {
+        position: relative;
         width: 100%;
         margin-left: 0;
-        font-size: 12px;
+        margin-top: 15px;
+        z-index: 1;
     }
 
     .frontent {
-        position: static;
-        width: 100%;
-        margin-left: 0;
-        margin-top: 20px;
-    }
-
-    .kalendar {
-        left: 0;
-        width: 100%;
-    }
-}
-
-/* 🔹 Mobile (max 768px) */
-@media (max-width: 768px) {
-
-    header {
-        height: auto;
-        padding: 10px 5px;
-    }
-
-    .saidbar {
-        position: static;
-        width: 100%;
-        height: auto;
         display: flex;
-        justify-content: center;
-    }
-
-    .iconlar {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .home {
-        margin-top: 20px;
-    }
-
-    .kalendar {
-        position: static;
-        margin-bottom: 20px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .attendance {
-        display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    .matin {
-        margin-left: 0;
-        text-align: center;
-    }
-
     .footer {
-        position: static;
-        width: 100%;
-        left: 0;
         flex-direction: column;
         gap: 10px;
     }
 }
 
-/* 🔹 Juda kichik ekran (max 480px) */
+/* ===== Very small screens (max 480px) ===== */
 @media (max-width: 480px) {
-
-    h1 {
-        font-size: 18px;
-    }
-
-    .att {
-        width: 18px;
-        height: 18px;
-    }
-
-    .frontent input {
-        width: 100%;
-    }
-
+    header img { max-width: 60px; }
+    h1 { font-size: 18px; }
+    .att { width: 18px; height: 18px; }
+    .frontent { width: 100%; }
+    .attendance { font-size: 12px; }
 }
